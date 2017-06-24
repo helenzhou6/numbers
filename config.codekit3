@@ -35,14 +35,6 @@
 		"oAP": "\/build\/json-generator\/node_modules",
 		"oF": 0
 		},
-	"\/json-generator\/numbers.json": {
-		"ft": 524288,
-		"oA": 1,
-		"oAP": "\/json-generator\/numbers-min.json",
-		"oF": 0,
-		"oO": 0,
-		"oS": 1
-		},
 	"\/json-generator\/package.json": {
 		"ft": 524288,
 		"oA": 1,

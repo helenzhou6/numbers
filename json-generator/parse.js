@@ -33,13 +33,13 @@ $('.num').each((i, elem) => {
 	} else if (numColor === 'FF7700') {
 		numColor = 'digits';
 	} else if (numColor === '66CC99') {
-		numColor = 'sums of powers';
+		numColor = 'sums';
 	} else if (numColor === '99FF00') {
 		numColor = 'bases';
 	} else if (numColor === 'brown') {
 		numColor = 'combinatorics';
 	} else if (numColor === 'FF6699') {
-		numColor = 'powers/polygonal';
+		numColor = 'powers';
 	} else if (numColor === 'gold') {
 		numColor = 'Fibonacci';
 	} else if (numColor === 'red') {
@@ -49,25 +49,25 @@ $('.num').each((i, elem) => {
 	} else if (numColor === 'gray') {
 		numColor = 'algebra';
 	} else if (numColor === 'purple') {
-		numColor = 'perfect/amicable';
+		numColor = 'perfect';
 	} else if (numColor === 'EEEE00') {
 		numColor = 'pandigital';
 	} else if (numColor === 'black') {
 		numColor = 'divisors';
 	} else if (numColor === 'BBBB00') {
-		numColor = 'games/puzzles';
+		numColor = 'games';
 	} else if (numColor === '006600') {
 		numColor = 'divisors';
 	}
 	const number = $(elem).find('font').text();
- 	
+
 	nums[number] = {
 		property: numColor,
 		description: numDescription
 	};
 
 
-	
+
 });
 
  fs.writeFile(__dirname + "/numbers.json", JSON.stringify(nums), function (err) {

@@ -1,6 +1,8 @@
 //TO DO
-// Use flex box to position items
-// fix mobile view
+// have links target blank
+// 7089 is largest number
+//  animate
+// bzck/forwaed
 
 @mixin media ($width) {
   @media (min-width: $width) {
@@ -22,18 +24,18 @@
 }
 
 $blue: #31486B;
+$background: #FFECC1;
 
 body {
-  background-color: #FFECC1;
+  background-color: $background;
   color: #31486B;
   font-family: europa;
   position: relative;
   min-height: 100vh;
-  padding-top: 4.5em;
-  // padding-bottom: 5em;
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
+  padding-top: 3em;
+  @include media(580px) {
+    padding-top: 4em;
+  }
 }
 
 h1 {
@@ -45,7 +47,7 @@ h1 {
   padding: 0 5em 0 5em;
   line-height: 1.5em;
 
-  @include media(450px) {
+  @include media(580px) {
     padding: 0;
     font-size: 0.9em;
   }
@@ -54,29 +56,67 @@ h1 {
 .content-wrapper {
     max-width: 40em;
     margin: 0 auto;
+
+    @include media(580px) {
+      padding-left: 4em;
+      padding-right: 4em;
+    }
 }
 
 input {
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding: 0;
+  font-family: inherit;
+  font-weight: inherit;
+  text-align: inherit;
+  width: 100%;
+  color: $blue;
+  text-shadow: .03em .03em 0 $background;
+}
+
+.input {
   font-size: 4em;
   color: $blue;
   font-family: europa;
   font-weight: 700;
-  border: none;
-  background-color: transparent;
-  outline: none;
   padding-bottom: 0.1em;
   border-bottom: 2px solid $blue;
-  width: 2.5em;
+  width: 12rem;
+  margin: 0 auto;
   text-align: center;
   border-radius: 0;
-  // letter-spacing: 0.04em;
-  @include media(450px) {
+  position: relative;
+  text-align: center;
+  margin-top: 0.8em;
+
+  @include media(580px) {
     font-size: 5em;
+    margin-top: 0.7em;
   }
-}
 
-.input__text {
+  &:after {
+    position: absolute;
+    width: 100%;
+    top: .07em;
+    left: .07em;
+    z-index: -1;
+    content: attr(data-shadow);
+    display: block;
+    background-image:
+    linear-gradient(
+      45deg,
+      transparent 45%,
+      currentColor 45%,
+      currentColor 55%,
+      transparent 0
+    );
+    background-size: .07em .07em;
 
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 input::-webkit-outer-spin-button,
@@ -85,29 +125,24 @@ input::-webkit-inner-spin-button{
   margin: 0;
 }
 
-.input {
-  padding-top: 2.5em;
-  text-align: center;
-  @include media(450px) {
-    padding-top: 4em;
-  }
-}
-
 .text {
   text-align: center;
   padding: 0 2.5em 0 2.5em;
   font-size: 1.3em;
   font-weight: 300;
   line-height: 1.3em;
+  min-height: 7.5em;
 
   a {
     font-weight: 700;
-    font-size: 0.8em;
+    font-size: 0.75em;
     text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.1em;
   }
 
-  @include media(450px) {
-    padding: 1em 0 0 0;
+  @include media(580px) {
+    padding: 0.4em 0 0 0;
     font-size: 1.6em;
   }
 }
@@ -118,14 +153,14 @@ input::-webkit-inner-spin-button{
 }
 
 .property {
-  padding-top: 4em;
+  // padding-top: 0.5em;
   font-size: 0.7em;
   word-spacing: 0.5em;
   font-weight: 300;
   text-align: center;
   line-height: 1.5em;
 
-  @include media(450px) {
+  @include media(580px) {
     font-size: 0.9em;
   }
 }
@@ -141,7 +176,7 @@ footer {
   right: 1.5em;
   left: 1.5em;
 
-  @include media(450px) {
+  @include media(580px) {
     font-size: 0.6em;
   }
 }
@@ -159,4 +194,8 @@ footer {
 
 a {
   color: $blue;
+}
+
+.is-bold {
+  font-weight: 700;
 }
