@@ -1,0 +1,162 @@
+//TO DO
+// Use flex box to position items
+// fix mobile view
+
+@mixin media ($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+*,
+*::before,
+*::after {
+  // border: 1px solid lightblue;
+  box-sizing: border-box;
+}
+
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+$blue: #31486B;
+
+body {
+  background-color: #FFECC1;
+  color: #31486B;
+  font-family: europa;
+  position: relative;
+  min-height: 100vh;
+  padding-top: 4.5em;
+  // padding-bottom: 5em;
+  // display: flex;
+  // align-items: center;
+  // justify-content: center;
+}
+
+h1 {
+  // font-weight: 400;
+  font-size: 0.8em;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 0 5em 0 5em;
+  line-height: 1.5em;
+
+  @include media(450px) {
+    padding: 0;
+    font-size: 0.9em;
+  }
+}
+
+.content-wrapper {
+    max-width: 40em;
+    margin: 0 auto;
+}
+
+input {
+  font-size: 4em;
+  color: $blue;
+  font-family: europa;
+  font-weight: 700;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  padding-bottom: 0.1em;
+  border-bottom: 2px solid $blue;
+  width: 2.5em;
+  text-align: center;
+  border-radius: 0;
+  // letter-spacing: 0.04em;
+  @include media(450px) {
+    font-size: 5em;
+  }
+}
+
+.input__text {
+
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+  margin: 0;
+}
+
+.input {
+  padding-top: 2.5em;
+  text-align: center;
+  @include media(450px) {
+    padding-top: 4em;
+  }
+}
+
+.text {
+  text-align: center;
+  padding: 0 2.5em 0 2.5em;
+  font-size: 1.3em;
+  font-weight: 300;
+  line-height: 1.3em;
+
+  a {
+    font-weight: 700;
+    font-size: 0.8em;
+    text-transform: uppercase;
+  }
+
+  @include media(450px) {
+    padding: 1em 0 0 0;
+    font-size: 1.6em;
+  }
+}
+
+.number {
+  font-weight: 700;
+  font-size: 0.8em;
+}
+
+.property {
+  padding-top: 4em;
+  font-size: 0.7em;
+  word-spacing: 0.5em;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5em;
+
+  @include media(450px) {
+    font-size: 0.9em;
+  }
+}
+
+footer {
+  font-weight: 300;
+  text-transform: uppercase;
+
+  letter-spacing: 0.16em;
+  font-size: 0.4em;
+  position: absolute;
+  bottom: 1.5em;
+  right: 1.5em;
+  left: 1.5em;
+
+  @include media(450px) {
+    font-size: 0.6em;
+  }
+}
+
+.footer__made {
+  width: 50%;
+  float: left;
+}
+
+.footer__credit {
+  width: 50%;
+  float: right;
+  text-align: right;
+}
+
+a {
+  color: $blue;
+}
