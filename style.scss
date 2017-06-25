@@ -1,8 +1,7 @@
 //TO DO
-// have links target blank
-// 7089 is largest number
 //  animate
-// bzck/forwaed
+// bzck/forwaed - history
+
 
 @mixin media ($width) {
   @media (min-width: $width) {
@@ -32,9 +31,13 @@ body {
   font-family: europa;
   position: relative;
   min-height: 100vh;
-  padding-top: 3em;
+	padding-bottom: 5em;
+  // padding-top: 3em;
+	display: flex;
+	align-items: center;
+	justify-content: center;
   @include media(580px) {
-    padding-top: 4em;
+    // padding-top: 4em;
   }
 }
 
@@ -127,21 +130,22 @@ input::-webkit-inner-spin-button{
 
 .text {
   text-align: center;
-  padding: 0 2.5em 0 2.5em;
+  padding: 0 1.5em 0 1.5em;
   font-size: 1.3em;
   font-weight: 300;
   line-height: 1.3em;
-  min-height: 7.5em;
+  min-height: 8em;
 
   a {
     font-weight: 700;
-    font-size: 0.75em;
+    font-size: 0.7em;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.1em;
   }
 
   @include media(580px) {
+		min-height: 7.5em;
     padding: 0.4em 0 0 0;
     font-size: 1.6em;
   }
@@ -149,7 +153,7 @@ input::-webkit-inner-spin-button{
 
 .number {
   font-weight: 700;
-  font-size: 0.8em;
+  font-size: 0.7em;
 }
 
 .property {
@@ -159,6 +163,10 @@ input::-webkit-inner-spin-button{
   font-weight: 300;
   text-align: center;
   line-height: 1.5em;
+
+	span {
+		transition: all 0.2s;
+	}
 
   @include media(580px) {
     font-size: 0.9em;
@@ -194,6 +202,23 @@ footer {
 
 a {
   color: $blue;
+}
+
+sup {
+	font-weight: 700;
+	font-size: 0.4em;
+	// vertical-align: super;
+	display: inline-block;
+
+	//if caps 'TH' (some are n)
+	// letter-spacing: 0.1em;
+	// padding-left: 0.1em;
+	// text-transform: uppercase;
+}
+
+sub {
+	font-weight: 700;
+	font-size: 0.4em;
 }
 
 .is-bold {

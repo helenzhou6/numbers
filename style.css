@@ -14,10 +14,10 @@ body {
   font-family: europa;
   position: relative;
   min-height: 100vh;
-  padding-top: 3em; }
-  @media (min-width: 580px) {
-    body {
-      padding-top: 4em; } }
+  padding-bottom: 5em;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
 
 h1 {
   font-size: 0.8em;
@@ -89,25 +89,26 @@ input::-webkit-inner-spin-button {
 
 .text {
   text-align: center;
-  padding: 0 2.5em 0 2.5em;
+  padding: 0 1.5em 0 1.5em;
   font-size: 1.3em;
   font-weight: 300;
   line-height: 1.3em;
-  min-height: 7.5em; }
+  min-height: 8em; }
   .text a {
     font-weight: 700;
-    font-size: 0.75em;
+    font-size: 0.7em;
     text-transform: uppercase;
     text-decoration: none;
     letter-spacing: 0.1em; }
   @media (min-width: 580px) {
     .text {
+      min-height: 7.5em;
       padding: 0.4em 0 0 0;
       font-size: 1.6em; } }
 
 .number {
   font-weight: 700;
-  font-size: 0.8em; }
+  font-size: 0.7em; }
 
 .property {
   font-size: 0.7em;
@@ -115,6 +116,8 @@ input::-webkit-inner-spin-button {
   font-weight: 300;
   text-align: center;
   line-height: 1.5em; }
+  .property span {
+    transition: all 0.2s; }
   @media (min-width: 580px) {
     .property {
       font-size: 0.9em; } }
@@ -143,6 +146,15 @@ footer {
 
 a {
   color: #31486B; }
+
+sup {
+  font-weight: 700;
+  font-size: 0.4em;
+  display: inline-block; }
+
+sub {
+  font-weight: 700;
+  font-size: 0.4em; }
 
 .is-bold {
   font-weight: 700; }

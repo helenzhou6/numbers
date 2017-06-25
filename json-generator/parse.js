@@ -12,10 +12,18 @@ const nums = {};
 $('.num').each((i, elem) => {
 	let numDescription = $(elem).find('.desc')
 		.html()
-		.replace(/(^|\s)(\d+)/g, ' <span class="number">$2</span>')
-	  	.replace(/(\d+)(^|\s)/g, '<span class="number">$1</span> ')
+
+		.replace(/(^|\s)(\d+)/g, '$1<span class="number">$2</span>')
+	  	.replace(/(\d+)(^|\s)/g, '<span class="number">$1</span>$2')
 	  	.replace(/<font .+?>/g, '')
+			// .replace(/([(+{.}×),x-])(\d+)/g, '$1<span class="number">$2</span>')
+			// .replace(/(^|\s)([n])(^|\s)/g, '$1<span class="number">$2</span>$3')
+			// .replace(/([()+-])([n])([()+-])/g, '$1<span class="number">$2</span>$3')
+			.replace(/(^|\s)(\d+[n])(^|\s)/g, '$1<span class="number">$2</span>$3')
+			.replace('<a href=\"', '<a target="_blank" href=\"')
 	  	.replace(/<\/font>/g, '');
+
+
 
 
 	if (numDescription === '???') {
