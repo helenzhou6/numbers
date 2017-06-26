@@ -13,19 +13,22 @@ $(document).ready(function () {
 	// updates the description: removes bolded property, and updates property and description
 	var descripUpdate = function(value, data) {
 		$('.property').find('.is-bold').removeClass('is-bold');
-		if (data[value]) {
-			$text.html(data[value].description);
-			$('.' + data[value].property).addClass('is-bold');
+		var effectiveValue = parseInt(value);
+		var description = "If you know a distinctive fact about this number, please <a href='mailto:efriedma@stetson.edu'>e-mail</a> me.";
+		if (data[effectiveValue]) {
+			description = data[effectiveValue].description;
+			$('.' + data[effectiveValue].property).addClass('is-bold');
 		} else if (value === ''){
-				$text.html('Type a number between <span class="number">0</span> to <span class="number">9999</span>');
-		} else {
-			$text.html("If you know a distinctive fact about this number, please <a href='mailto:efriedma@stetson.edu'>e-mail</a> me.");
+				description = 'Type a number between <span class="number">0</span> to <span class="number">9999</span>';
 		}
+		$text.html(description);
+		// with fade animations:
+		// $text.fadeOut(50, function() {
+		// 	$(this).html(description).fadeIn(50);
+		// });
 	}
 
 	// INIT
-	// focuses on input when document loaded
-	$input.focus();
 
 	// if there is already an input on refresh, updates the shadow
 	if ($input.val()){
@@ -39,13 +42,19 @@ $(document).ready(function () {
 			&& e.keyCode != 46
 			&& e.keyCode != 8
 			&& e.keyCode != 37
-			&& e.keyCode !=39) {
+			&& e.keyCode != 39
+			|| e.keyCode === 69
+			|| e.keyCode === 189
+			|| e.keyCode === 190
+			|| e.keyCode === 187) {
 				e.preventDefault();
 			}
     });
 
 	// once ajax done...
   $.ajax('/Numnumbers.json').done(function(data){
+		// focuses on input when document loaded (init)
+		$input.focus();
 
 		// on input in input field, updates shadow and description/property, adds to history/url
     $input.on('input', function(e) {
