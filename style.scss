@@ -2,6 +2,7 @@
 // refactor jquery
 // shadow on ipad not really right (rendering issue)
 // some numbers not bolded in description, but can't differentiate between those in url
+// spinner until the file for numbres loads
 
 @mixin media ($width) {
   @media (min-width: $width) {
@@ -57,6 +58,8 @@ h1 {
 }
 
 .content-wrapper {
+	 	transition: all 1s;
+		opacity: 0;
     max-width: 40em;
     margin: 0 auto;
 
@@ -223,4 +226,8 @@ sub {
 
 .is-bold {
   font-weight: 700;
+}
+
+.is-visible {
+	opacity: 1;
 }

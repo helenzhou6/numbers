@@ -32,6 +32,8 @@ h1 {
       font-size: 0.9em; } }
 
 .content-wrapper {
+  transition: all 1s;
+  opacity: 0;
   max-width: 40em;
   margin: 0 auto; }
   @media (min-width: 580px) {
@@ -158,3 +160,6 @@ sub {
 
 .is-bold {
   font-weight: 700; }
+
+.is-visible {
+  opacity: 1; }
