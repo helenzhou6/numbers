@@ -34,7 +34,7 @@ $(document).ready(function () {
 	}
 
 	// once ajax done...
-  $.ajax('/Numnumbers.json').done(function(data){
+  $.ajax('Numnumbers.json').done(function(data){
 
 		// init - fade in content and focus on input
 		$('.content-wrapper').addClass('is-visible');
