@@ -51,7 +51,7 @@ $(document).ready(function () {
 				&& e.keyCode === 8
 				) {
 					UIUpdate('', data);
-					history.pushState({}, "", '/');
+					history.pushState({}, "", '');
 				// prevents more than 4 digits being typed and other characters, but allows backspace etc.
 				// and if any disallowed keys or down arrow when value is 0 is pressed, nothing happens
 				} else if ($(this).val().length > 3
@@ -72,7 +72,7 @@ $(document).ready(function () {
 			UIUpdate(urlValue, data);
 			history.pushState(urlValue, null, urlValue);
 		} else {
-			history.pushState({}, "", '/');
+			history.pushState({}, "", '');
 		}
 
 		// ON INPUT in input field, updates UI and URL
@@ -86,7 +86,7 @@ $(document).ready(function () {
 				var inputVal = Math.abs($(this).val());
 				history.pushState(inputVal, null, inputVal);
 			} else {
-				history.pushState({}, "", '/');
+				history.pushState({}, "", '');
 			}
 			UIUpdate(inputVal, data);
     });
