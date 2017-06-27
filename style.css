@@ -11,7 +11,7 @@
 body {
   background-color: #FFECC1;
   color: #31486B;
-  font-family: europa;
+  font-family: 'europa', sans-serif;
   position: relative;
   min-height: 100vh;
   padding-bottom: 5em;
@@ -56,7 +56,7 @@ input {
 .input {
   font-size: 4em;
   color: #31486B;
-  font-family: europa;
+  font-family: 'europa', sans-serif;
   font-weight: 700;
   padding-bottom: 0.1em;
   border-bottom: 2px solid #31486B;

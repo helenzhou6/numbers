@@ -1,8 +1,6 @@
 // TO DO
-// refactor jquery
-// shadow on ipad not really right (rendering issue)
+// shadow on ipad/iphone not really right (rendering issue)
 // some numbers not bolded in description, but can't differentiate between those in url
-// spinner until the file for numbres loads
 
 @mixin media ($width) {
   @media (min-width: $width) {
@@ -29,7 +27,7 @@ $background: #FFECC1;
 body {
   background-color: $background;
   color: #31486B;
-  font-family: europa;
+  font-family: 'europa', sans-serif;
   position: relative;
   min-height: 100vh;
 	padding-bottom: 5em;
@@ -85,7 +83,7 @@ input {
 .input {
   font-size: 4em;
   color: $blue;
-  font-family: europa;
+  font-family: 'europa', sans-serif;
   font-weight: 700;
   padding-bottom: 0.1em;
   border-bottom: 2px solid $blue;
@@ -119,11 +117,22 @@ input {
       transparent 0
     );
     background-size: .07em .07em;
-
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 }
+
+// linear-gradient(
+// 45deg,
+// $blue 12.5%,
+// 	transparent 12.5%,
+// 	transparent 37.5%,
+// 	$blue 37.5%,
+// 	$blue 62.5%,
+// 	transparent 62.5%,
+// 	transparent 87.5%,
+// 	$blue 87.5%
+// );
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button{

@@ -35,11 +35,12 @@ $(document).ready(function () {
 
 	// once ajax done...
   $.ajax('/Numnumbers.json').done(function(data){
-		// fade in content and focus on input
+
+		// init - fade in content and focus on input
 		$('.content-wrapper').addClass('is-visible');
 		$input.focus();
 
-		// ON KEYDOWN
+		// ON KEYDOWN - prevention
 		$input.on('keydown', function(e) {
 				var urlValue = window.location.pathname.substring(1);
 				// allowed keys e.g. down arrow etc
@@ -65,7 +66,7 @@ $(document).ready(function () {
 					}
 			});
 
-		// deals with url inputs being funky, get the numbers or homepage
+		// ON URL SUBMIT deals with url inputs being funky, get the numbers or homepage
 		var urlValue = parseInt(window.location.pathname.replace(/\D/g, '').substr(0, 4));
 		if (urlValue || urlValue === 0){
 			UIUpdate(urlValue, data);
@@ -74,7 +75,7 @@ $(document).ready(function () {
 			history.pushState({}, "", '/');
 		}
 
-		// on input in input field, updates UI and URL
+		// ON INPUT in input field, updates UI and URL
     $input.on('input', function(e) {
 			var urlValue = window.location.pathname.substring(1);
 			e.preventDefault();
@@ -90,7 +91,7 @@ $(document).ready(function () {
 			UIUpdate(inputVal, data);
     });
 
-		// if back or forward history button, updates UI
+		// ON POPSTATE - if back or forward history button, updates UI
 		window.addEventListener('popstate', function(e) {
 			var urlValue = parseInt(window.location.pathname.replace(/\D/g, '').substr(0, 4));
 			e.preventDefault();
