@@ -1,6 +1,7 @@
-//TO DO
-//  animate
-// refresh - 404 error
+// TO DO
+// refactor jquery
+// shadow on ipad not really right (rendering issue)
+// some numbers not bolded in description, but can't differentiate between those in url
 
 @mixin media ($width) {
   @media (min-width: $width) {
