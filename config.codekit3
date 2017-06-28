@@ -1526,7 +1526,7 @@
 			}
 		},
 	"esLintSourceType": 0,
-	"externalServerAddress": "http:\/\/numbers.dev\/",
+	"externalServerAddress": "http:\/\/numbers.dev\/numbers",
 	"gitIgnoreBuildFolder": 1,
 	"hideConfigFile": 0,
 	"jsCheckerReservedNamesString": "",

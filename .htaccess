@@ -1,4 +1,6 @@
-RewriteEngine on
-RewriteCond %{REQUEST_URI} !^/index.html$
-RewriteCond %{REQUEST_URI} !\.(gif|jpe?g|png|css|js|json)$
-RewriteRule .* /index.html
+RewriteEngine On
+RewriteBase /numbers
+RewriteRule ^index\.html$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.html [L]
