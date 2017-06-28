@@ -29,6 +29,28 @@
 		"oAP": "\/.htaccess",
 		"oF": 0
 		},
+	"\/apple-touch-icon.png": {
+		"ft": 32768,
+		"iS": 19107,
+		"oA": 0,
+		"oAP": "\/apple-touch-icon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
+	"\/favicon.png": {
+		"ft": 32768,
+		"iS": 1596,
+		"oA": 0,
+		"oAP": "\/favicon.png",
+		"oF": 0,
+		"oIPL": 0,
+		"opt": 0,
+		"oT": 1,
+		"q": 100
+		},
 	"\/index.html": {
 		"ft": 8192,
 		"oA": 2,
