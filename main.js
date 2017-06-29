@@ -79,6 +79,18 @@ $(document).ready(function () {
 			}
 		});
 
+		// disable mousewheel on a input number field when in focus
+		// (to prevent Cromium browsers change the value when scrolling)
+		$input.on('focus', 'input[type=number]', function (e) {
+			$(this).on('mousewheel.disableScroll', function (e) {
+				e.preventDefault()
+			})
+		})
+		$input.on('blur', 'input[type=number]', function (e) {
+			$(this).off('mousewheel.disableScroll')
+		})
+
+
 		// ON INPUT in input field, updates UI and URL
     $input.on('input', function(e) {
 			e.preventDefault();
