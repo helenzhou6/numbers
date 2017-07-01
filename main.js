@@ -55,29 +55,64 @@ $(document).ready(function () {
 		}
 
 		// Up/down etc
-		var allowedFnKeys = [46, 8, 37, 39, 38, 40, 13];
-		// allowed keys e.g. down arrow etc
-		var numberKeys = [45, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105];
-		var allAllowedKeys = [].concat(allowedFnKeys, numberKeys);
+		const allowedFnKeys = {
+			46: 'delete',
+			8: 'backspace',
+			37: 'left arrow',
+			38: 'up arrow',
+			39: 'right arrow',
+			40: 'down arrow',
+			13: 'enter',
+		}
+
+		const numberKeys = {
+			45: 'insert',
+			48: '0',
+			49: '1',
+			50: '2',
+			51: '3',
+			52: '4',
+			53: '5',
+			54: '6',
+			55: '7',
+			56: '8',
+			57: '9',
+			96: 'numpad 0',
+			97: 'numpad 1',
+			98: 'numpad 2',
+			99: 'numpad 3',
+			100: 'numpad 4',
+			101: 'numpad 5',
+			102: 'numpad 6',
+			103: 'numpad 7',
+			104: 'numpad 8',
+			105: 'numpad 9',
+		}
+
+		var allAllowedKeys = $.extend({}, allowedFnKeys, numberKeys);
 
 		// ON KEYDOWN - prevention
 		$input.on('keydown', function(e) {
 			var inputVal = $input.val();
-
 			// if value is 0 and backspace, then remove the 0
-			if (urlValue === '0' && e.keyCode === 8) {
-				uiUpdate('', data);
-				history.pushState({}, '', '/');
-				// prevents more than 4 digits being typed and other characters, but allows backspace etc.
-				// and if any disallowed keys or down arrow when value is 0 is pressed, nothing happens
-			} else if (
-				(inputVal.length > 3 && allowedFnKeys.indexOf(e.keyCode) == -1)
-				|| allAllowedKeys.indexOf(e.keyCode) == -1
-				|| (inputVal === '0' && e.keyCode === 40)
-			) {
-				e.preventDefault();
-			}
-		});
+			if
+			(inputVal === '0' && e.keyCode === 8) {
+
+					uiUpdate('', data);
+					history.pushState({}, '', '/');
+
+					// prevents more than 4 digits being typed and other characters, but allows backspace etc.
+					// and if any disallowed keys or down arrow when value is 0 is pressed, nothing happens
+				}
+				else if
+					((inputVal.length > 3 && !(allowedFnKeys[e.keyCode]))
+					|| !allAllowedKeys[e.keyCode]
+					|| (inputVal === '0' && e.keyCode === 40)
+					|| (inputVal === '9999' && e.keyCode === 38)
+				) {
+					e.preventDefault();
+				}
+			});
 
 		// disable mousewheel on a input number field when in focus
 		// (to prevent Cromium browsers change the value when scrolling)
