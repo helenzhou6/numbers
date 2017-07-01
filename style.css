@@ -20,10 +20,7 @@ body {
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+          align-items: center; }
 
 h1 {
   font-size: 0.8em;
