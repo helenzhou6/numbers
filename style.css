@@ -15,9 +15,15 @@ body {
   position: relative;
   min-height: 100vh;
   padding-bottom: 5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center; }
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 h1 {
   font-size: 0.8em;
@@ -32,6 +38,7 @@ h1 {
       font-size: 0.9em; } }
 
 .content-wrapper {
+  -webkit-transition: all 1s;
   transition: all 1s;
   opacity: 0;
   max-width: 40em;
@@ -80,6 +87,7 @@ input {
     z-index: -1;
     content: attr(data-shadow);
     display: block;
+    background-image: -webkit-linear-gradient(45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 0);
     background-image: linear-gradient(45deg, transparent 45%, currentColor 45%, currentColor 55%, transparent 0);
     background-size: .07em .07em;
     -webkit-background-clip: text;
@@ -120,6 +128,7 @@ input::-webkit-inner-spin-button {
   text-align: center;
   line-height: 1.5em; }
   .property span {
+    -webkit-transition: all 0.2s;
     transition: all 0.2s; }
   @media (min-width: 580px) {
     .property {

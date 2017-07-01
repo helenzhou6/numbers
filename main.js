@@ -56,7 +56,7 @@ $(document).ready(function () {
 		uiUpdate(urlValue, data);
 
 		// Up/down etc
-		const allowedFnKeys = {
+		var allowedFnKeys = {
 			46: 'delete',
 			8: 'backspace',
 			37: 'left arrow',
@@ -66,7 +66,7 @@ $(document).ready(function () {
 			13: 'enter',
 		}
 
-		const numberKeys = {
+		var numberKeys = {
 			45: 'insert',
 			48: '0',
 			49: '1',
@@ -125,7 +125,7 @@ $(document).ready(function () {
 			// also evaluates 000 to 0 and 099 to 99 in UI
 			// this removes being able to down arrow to negative numbers, with lowest no being 0
 			var inputVal = '';
-			
+
 			if (inputtedVal != ''){
 				inputVal = Math.abs(inputtedVal);
 				history.pushState(inputVal, null, inputVal);
